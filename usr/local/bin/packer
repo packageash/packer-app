@@ -10,6 +10,7 @@ case $1 in
     sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb 
     sudo dpkg --install Donut.deb 
     sudo rm Donut.deb
+    sudo chmod a+x /usr/local/bin/donut
     ;;
 
   uninstall-donut)
