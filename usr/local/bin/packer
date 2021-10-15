@@ -1,0 +1,34 @@
+#!/bin/sh
+
+clear
+
+
+case $1 in
+
+  install-donut)
+    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb 
+    sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb 
+    sudo dpkg --install Donut.deb 
+    sudo rm Donut.deb
+    ;;
+
+  uninstall-donut)
+    sudo rm /usr/local/bin/donut
+    ;;
+    
+  install-neofetch)
+    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb
+    sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb Neofetch.deb 
+    sudo dpkg --install Neofetch.deb 
+    sudo rm Neofetch.deb
+    sudo chmod a+x /usr/local/bin/neofetch
+    ;;
+
+  uninstall-neofetch)
+    sudo rm /usr/local/bin/donut
+    ;;
+    
+  *)
+    echo "Nothing Picked To Install"
+    ;;
+esac
