@@ -1,2 +1,6 @@
-Package = Packer
-Version = 1.0
+Package: Packer 
+Description: This Is Packer For Linux In Gen
+Author: Landon Cates
+Version: 1.0
+Architecture: all
+Maintainer: Landon Cates
