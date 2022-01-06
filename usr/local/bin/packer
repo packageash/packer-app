@@ -26,7 +26,7 @@ case $1 in
     ;;
 
   uninstall-neofetch)
-    sudo rm /usr/local/bin/donut
+    sudo rm /usr/local/bin/neofetch
     ;;
     
   *)
