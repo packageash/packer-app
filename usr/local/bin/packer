@@ -10,7 +10,7 @@ case $1 in
     sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb
     sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb
     sudo mv Donut.deb /home/packercache/Donut.deb
-    sudo dpkg --install Donut.deb 
+    sudo dpkg --install /home/packercache/Donut.deb 
     sudo echo Cleaning Up
     sudo rm -r /home/packercache
     sudo clear
