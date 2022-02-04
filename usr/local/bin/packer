@@ -47,7 +47,7 @@ case $1 in
     ;;
     
   --version)
-  echo Packer Version 1.3 Debug
+  echo Packer Version 1.4 Debug
     ;;
     
     packages)
