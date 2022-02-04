@@ -36,7 +36,7 @@ case $1 in
     sudo mv /usr/bin/neofetch /usr/local/bin/neofetch
     sudo chmod 755 /usr/local/bin/neofetch
     sudo clear
-    sudo echo Installed Donut Thingy
+    sudo echo Installed NeoFetch
     sudo echo NeoFetch Version 1.0
     ;;
 
