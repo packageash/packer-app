@@ -43,10 +43,10 @@ case $1 in
     echo Donut Thingy
     echo Neofetch
     echo End Of Package List
-    echo To Request A Package Ask @PokeyManatee4 To Add A New Package To The Repo And What The Package(s) Or Why I Should Add It To The Repo.
     ;;
     
   *)
     echo "Nothing Picked To (Un)Install"
+    echo And To Do A Package Request Ask @PokeyManatee4 To Add A New Package To The Repo And What The Package(s) Or Why I Should Add It To The Repo.
     ;;
 esac
