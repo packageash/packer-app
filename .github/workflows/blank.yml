@@ -8,9 +8,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Start Running Build Shell Script
-        run: mkdir Bin && cd ../ && ls && sudo dpkg-deb --build packer-app-sudo Packer.deb
+        run: mkdir ../packer-app-sudo/Bin && cd ../ && ls && sudo dpkg-deb --build packer-app-sudo packer-app-sudo/Bin/Packer.deb
       - name: Download Output
         uses: actions/upload-artifact@v2
         with:
           name: output
-          path: Packer.deb
+          path: Bin/Packer.deb
