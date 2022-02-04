@@ -7,10 +7,13 @@ case $1 in
 
   install-donut)
   sudo mkdir /home/packercache
-    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb -o /home/packercache/Donut.deb
+    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb
+    mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb
+    mv Donut.deb /home/packercache
     sudo echo "a3db2f16c16abd593195bb2f0004f151 Donut.deb" | md5sum -c Donut.deb
     sudo dpkg --install /home/packercache/Donut.deb 
-    sudo rm /home/packercache/Donut.deb
+    echo Cleaning Up
+    rm -r /home/packercache
     ;;
 
   uninstall-donut)
@@ -21,7 +24,8 @@ case $1 in
     sudo mkdir /home/packercache
     sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb -o /home/packercache/Neofetch.deb
     sudo dpkg --install /home/packercache/Neofetch.deb 
-    sudo rm /home/packercache/Neofetch.deb
+    echo Cleaning Up
+    rm -r /home/packercache
     sudo mv /usr/bin/neofetch /usr/local/bin/neofeth
     sudo chmod 755 /usr/local/bin/neofetch
     ;;
@@ -34,7 +38,14 @@ case $1 in
   echo Packer Version 1.1 Debug
     ;;
     
+    packages)
+    echo 2 Packages Found In Repo:
+    echo Donut Thingy
+    echo Neofetch
+    echo End Of Package List
+    echo To Request A Package Ask @PokeyManatee4 To Add A New Package To The Repo And What The Package(s) Or Why I Should Add It To The Repo.
+    
   *)
-    echo "Nothing Picked To Install"
+    echo "Nothing Picked To (Un)Install"
     ;;
 esac
