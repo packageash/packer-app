@@ -22,7 +22,7 @@ case $1 in
     sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb Neofetch.deb 
     sudo dpkg --install Neofetch.deb 
     sudo rm Neofetch.deb
-    sudo chmod /usr/bin/neofetch
+    sudo chmod 755 /usr/bin/neofetch
     ;;
 
   uninstall-neofetch)
