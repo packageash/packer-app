@@ -59,12 +59,17 @@ case $1 in
     echo End Of Package List
     ;;
     
-    magent-neofetch-code)
-    sudo mkdir ~/MagentedCodePacker
+    magnet-neofetch-code)
+    sudo mkdir ~/MagnetedCodePacker
     sudo echo Magenting!
     sudo cp /usr/local/bin/neofetch ~/MagentedCodePacker
     ;;
     
+    magnet-donut-code)
+    sudo mkdir ~/MagnetedCodePacker
+    sudo echo Magenting!
+    sudo wget https://raw.githubusercontent.com/packageash/app-code/main/donut.c
+    sudo mv donut.c ~/MagnetedCodePacker
   *)
     echo "Nothing Picked To (Un)Install"
     echo For A Package Request Ask PokeyManatee4 To Add A New Package To The Repo And What The Package Or Why I Should Add It To The Repo
