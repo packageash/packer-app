@@ -12,8 +12,8 @@ case $1 in
     sudo mv Donut.deb /home/packercache
     sudo echo "a3db2f16c16abd593195bb2f0004f151 Donut.deb" | md5sum -c Donut.deb
     sudo dpkg --install Donut.deb 
-    echo Cleaning Up
-    rm -r /home/packercache
+    sudo echo Cleaning Up
+    sudo rm -r /home/packercache
     ;;
 
   uninstall-donut)
