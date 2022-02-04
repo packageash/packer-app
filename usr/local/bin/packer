@@ -7,7 +7,8 @@ case $1 in
 
   install-donut)
     sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb 
-    sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb 
+    sudo echo "a3db2f16c16abd593195bb2f0004f151 Donut.deb" | md5sum -c Donut.deb
+    sudo if (Donut.debmd5 = a3db2f16c16abd593195bb2f0004f151)
     sudo dpkg --install Donut.deb 
     sudo rm Donut.deb
     sudo chmod a+x /usr/local/bin/donut
