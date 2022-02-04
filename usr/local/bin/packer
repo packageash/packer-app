@@ -9,8 +9,7 @@ case $1 in
   sudo mkdir /home/packercache
     sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb
     sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb
-    sudo mv Donut.deb /home/packercache
-    sudo echo "a3db2f16c16abd593195bb2f0004f151 Donut.deb" | md5sum -c Donut.deb
+    sudo mv Donut.deb /home/packercache/Donut.deb
     sudo dpkg --install Donut.deb 
     sudo echo Cleaning Up
     sudo rm -r /home/packercache
