@@ -29,6 +29,10 @@ case $1 in
     sudo rm /usr/bin/neofetch
     ;;
     
+  --version)
+  echo Packer Version 1.0 Debug
+    ;;
+    
   *)
     echo "Nothing Picked To Install"
     ;;
