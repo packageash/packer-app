@@ -59,6 +59,12 @@ case $1 in
     echo End Of Package List
     ;;
     
+    magent-neofetch-code)
+    sudo mkdir ~/MagentedCodePacker
+    sudo echo Magenting!
+    sudo cp /usr/local/bin/neofetch ~/MagentedCodePacker
+    ;;
+    
   *)
     echo "Nothing Picked To (Un)Install"
     echo For A Package Request Ask PokeyManatee4 To Add A New Package To The Repo And What The Package Or Why I Should Add It To The Repo
