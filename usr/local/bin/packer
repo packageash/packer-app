@@ -7,9 +7,8 @@ case $1 in
 
   install-donut)
   sudo mkdir /home/packercache
-    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb 
+    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb -o /home/packercache/Donut.deb
     sudo echo "a3db2f16c16abd593195bb2f0004f151 Donut.deb" | md5sum -c Donut.deb
-    sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb /home/packercache/Donut.deb
     sudo dpkg --install /home/packercache/Donut.deb 
     sudo rm /home/packercache/Donut.deb
     ;;
@@ -20,12 +19,12 @@ case $1 in
     
   install-neofetch)
     sudo mkdir /home/packercache
-    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb
+    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb -o /home/packercache/Neofetch.deb
     sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb /home/packercache/Neofetch.deb 
     sudo dpkg --install /home/packcache/Neofetch.deb 
-    sudo rm Neofetch.deb
+    sudo rm /home/packercache/Neofetch.deb
     sudo mv /usr/bin/neofetch /usr/local/bin/neofeth
-    sudo chmod 755 /usr/bin/neofetch
+    sudo chmod 755 /usr/local/bin/neofetch
     ;;
 
   uninstall-neofetch)
