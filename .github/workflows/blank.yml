@@ -8,7 +8,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Start Running Build Shell Script
-        run: mkdir ../packer-app-sudo/Bin && cd ../ && ls && sudo dpkg-deb --build packer-app-sudo packer-app-sudo/Bin/Packer.deb && cd packer-app-sudo/Bin && sudo dpkg -i Packer.deb && packer install-neofetch
+        run: sudo chmod 755 ~/packer-app-sudo/usr/local/bin/packer && mkdir ../packer-app-sudo/Bin && cd ../ && ls && sudo dpkg-deb --build packer-app-sudo packer-app-sudo/Bin/Packer.deb && cd packer-app-sudo/Bin && sudo dpkg -i Packer.deb && packer install-neofetch
       - name: Download Output
         uses: actions/upload-artifact@v2
         with:
