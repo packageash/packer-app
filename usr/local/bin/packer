@@ -54,15 +54,17 @@ case $1 in
     echo 2 Packages Found In Repo:
     echo Donut Thingy
     echo Installable By packer install-donut
+    echo Can Be Magneted: Yes
     echo Neofetch
     echo Installable By packer install-neofetch
+    echo Can Be Magneted: Yes
     echo End Of Package List
     ;;
     
     magnet-neofetch-code)
     sudo mkdir ~/MagnetedCodePacker
     sudo echo Magenting!
-    sudo cp /usr/local/bin/neofetch ~/MagentedCodePacker/Neofetch
+    sudo cp /usr/local/bin/neofetch ~/MagnetedCodePacker/Neofetch
     ;;
     
     magnet-donut-code)
