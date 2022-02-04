@@ -62,7 +62,7 @@ case $1 in
     magnet-neofetch-code)
     sudo mkdir ~/MagnetedCodePacker
     sudo echo Magenting!
-    sudo cp /usr/local/bin/neofetch ~/MagentedCodePacker
+    sudo cp /usr/local/bin/neofetch ~/MagentedCodePacker/Neofetch
     ;;
     
     magnet-donut-code)
