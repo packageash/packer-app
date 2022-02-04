@@ -14,10 +14,14 @@ case $1 in
     sudo dpkg --install Donut.deb 
     sudo echo Cleaning Up
     sudo rm -r /home/packercache
+    sudo clear
+    sudo echo Installed Donut Thingy
     ;;
 
   uninstall-donut)
     sudo rm /usr/local/bin/donut
+    sudo clear
+    sudo echo Uninstalled Donut Thingy
     ;;
     
   install-neofetch)
@@ -30,10 +34,14 @@ case $1 in
     sudo rm -r /home/packercache
     sudo mv /usr/bin/neofetch /usr/local/bin/neofetch
     sudo chmod 755 /usr/local/bin/neofetch
+    sudo clear
+    sudo echo Installed Donut Thingy
     ;;
 
   uninstall-neofetch)
     sudo rm /usr/local/bin/neofetch
+    sudo clear
+    sudo echo Uninstalled Neofetch
     ;;
     
   --version)
@@ -43,7 +51,9 @@ case $1 in
     packages)
     echo 2 Packages Found In Repo:
     echo Donut Thingy
+    echo Installable By packer install-donut
     echo Neofetch
+    echo Installable By packer install-neofetch
     echo End Of Package List
     ;;
     
