@@ -16,6 +16,7 @@ case $1 in
     sudo rm -r /home/packercache
     sudo clear
     sudo echo Installed Donut Thingy
+    sudo echo Donut Thingy 1.0
     ;;
 
   uninstall-donut)
@@ -36,6 +37,7 @@ case $1 in
     sudo chmod 755 /usr/local/bin/neofetch
     sudo clear
     sudo echo Installed Donut Thingy
+    sudo echo NeoFetch Version 1.0
     ;;
 
   uninstall-neofetch)
@@ -45,7 +47,7 @@ case $1 in
     ;;
     
   --version)
-  echo Packer Version 1.1 Debug
+  echo Packer Version 1.2 Debug
     ;;
     
     packages)
