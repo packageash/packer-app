@@ -70,6 +70,8 @@ case $1 in
     sudo echo Magenting!
     sudo wget https://raw.githubusercontent.com/packageash/app-code/main/donut.c
     sudo mv donut.c ~/MagnetedCodePacker
+    ;;
+    
   *)
     echo "Nothing Picked To (Un)Install"
     echo For A Package Request Ask PokeyManatee4 To Add A New Package To The Repo And What The Package Or Why I Should Add It To The Repo
