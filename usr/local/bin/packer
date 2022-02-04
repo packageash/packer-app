@@ -19,6 +19,7 @@ case $1 in
     ;;
     
   install-neofetch)
+    sudo mkdir /home/packercache
     sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb
     sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb /home/packercache/Neofetch.deb 
     sudo dpkg --install Neofetch.deb 
