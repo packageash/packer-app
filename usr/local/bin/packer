@@ -6,11 +6,11 @@ clear
 case $1 in
 
   install-donut)
-  sudo mkdir /home/packercache
-    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb
-    sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FDonut.deb Donut.deb
-    sudo mv Donut.deb /home/packercache/Donut.deb
-    sudo dpkg --install /home/packercache/Donut.deb 
+    sudo mkdir /home/packercache
+    sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/donut
+    sudo mv donut /home/packercache
+    sudo cd /home/packercache
+    sudo mv donut /usr/local/bin
     sudo echo Cleaning Up
     sudo rm -r /home/packercache
     sudo clear
@@ -26,13 +26,11 @@ case $1 in
     
   install-neofetch)
     sudo mkdir /home/packercache
-    sudo wget https://cdn.glitch.me/ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb
-    sudo mv ec7fa70f-caec-4ba9-877f-3f809b43f7ea%2FNeofetch.deb Neofetch.deb
-    sudo mv Neofetch.deb /home/packercache
-    sudo dpkg --install /home/packercache/Neofetch.deb 
+    sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/neofetch
+    sudo mv neofetch /home/packercache
+    sudo mv /home/packercache/neofetch /usr/local/bin/neofetch
     sudo echo Cleaning Up
     sudo rm -r /home/packercache
-    sudo mv /usr/bin/neofetch /usr/local/bin/neofetch
     sudo chmod 755 /usr/local/bin/neofetch
     sudo clear
     sudo echo Installed NeoFetch
@@ -46,14 +44,14 @@ case $1 in
     ;;
     
   --version)
-  echo Packer Version 1.4 Debug
+  echo Packer Version 1.5 Repo And Install Runtime Update Release
     ;;
     
     packages)
     echo 2 Packages Found In Repo:
     echo Donut Thingy
     echo Installable By packer install-donut
-    echo Can Be Magneted: Yes
+    echo Can Be Magneted: No Right Now Because I Moved The Repo That Its Requested From
     echo Neofetch
     echo Installable By packer install-neofetch
     echo Can Be Magneted: Yes
@@ -66,12 +64,6 @@ case $1 in
     sudo cp /usr/local/bin/neofetch ~/MagnetedCodePacker/Neofetch
     ;;
     
-    magnet-donut-code)
-    sudo mkdir ~/MagnetedCodePacker
-    sudo echo Magenting!
-    sudo wget https://raw.githubusercontent.com/packageash/app-code/main/donut.c
-    sudo mv donut.c ~/MagnetedCodePacker
-    ;;
     
   *)
     echo "Nothing Picked To (Un)Install"
