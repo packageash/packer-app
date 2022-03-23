@@ -9,14 +9,14 @@ case $1 in
     sudo mkdir /home/packercache
     sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/$2
     sudo mv $2 /home/packercache
-    sudo cd /home/packercache
+    cd /home/packercache
     sudo mv $2 /usr/local/bin
-    sudo echo Cleaning Up
+    echo Cleaning Up
     sudo rm -r /home/packercache
     sudo clear
     sudo chmod 755 /usr/local/bin/$2
-    sudo echo Installed $2
-    sudo echo $2 1.0
+    echo Installed $2
+    echo $2 1.0
     ;;
 
   uninstall)
