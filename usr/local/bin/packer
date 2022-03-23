@@ -8,7 +8,7 @@ case $1 in
   install)
     sudo mkdir /home/packercache
     sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/$2
-    sudo mv donut /home/packercache
+    sudo mv $2 /home/packercache
     sudo cd /home/packercache
     sudo mv $2 /usr/local/bin
     sudo echo Cleaning Up
