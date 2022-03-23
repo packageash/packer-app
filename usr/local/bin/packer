@@ -5,63 +5,45 @@ clear
 
 case $1 in
 
-  install-donut)
+  install)
     sudo mkdir /home/packercache
-    sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/donut
+    sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/$2
     sudo mv donut /home/packercache
     sudo cd /home/packercache
-    sudo mv donut /usr/local/bin
+    sudo mv $2 /usr/local/bin
     sudo echo Cleaning Up
     sudo rm -r /home/packercache
     sudo clear
-    sudo echo Installed Donut Thingy
-    sudo echo Donut Thingy 1.0
+    sudo chmod 755 /usr/local/bin/$2
+    sudo echo Installed $2
+    sudo echo $2 1.0
     ;;
 
-  uninstall-donut)
-    sudo rm /usr/local/bin/donut
+  uninstall)
+    sudo rm /usr/local/bin/$2
     sudo clear
-    sudo echo Uninstalled Donut Thingy
-    ;;
-    
-  install-neofetch)
-    sudo mkdir /home/packercache
-    sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/neofetch
-    sudo mv neofetch /home/packercache
-    sudo mv /home/packercache/neofetch /usr/local/bin/neofetch
-    sudo echo Cleaning Up
-    sudo rm -r /home/packercache
-    sudo chmod 755 /usr/local/bin/neofetch
-    sudo clear
-    sudo echo Installed NeoFetch
-    sudo echo NeoFetch Version 1.0
-    ;;
-
-  uninstall-neofetch)
-    sudo rm /usr/local/bin/neofetch
-    sudo clear
-    sudo echo Uninstalled Neofetch
+    sudo echo Uninstalled $2
     ;;
     
   --version)
-  echo Packer Version 1.5 Repo And Install Runtime Update Release
+  echo Packer Version 1.6 New Install Way Runtime Update Release
     ;;
     
     packages)
     echo 2 Packages Found In Repo:
     echo Donut Thingy
-    echo Installable By packer install-donut
+    echo Installable By packer install donut
     echo Can Be Magneted: No Right Now Because I Moved The Repo That Its Requested From
     echo Neofetch
-    echo Installable By packer install-neofetch
+    echo Installable By packer install neofetch
     echo Can Be Magneted: Yes
     echo End Of Package List
     ;;
     
-    magnet-neofetch-code)
+    magnet)
     sudo mkdir ~/MagnetedCodePacker
     sudo echo Magenting!
-    sudo cp /usr/local/bin/neofetch ~/MagnetedCodePacker/Neofetch
+    sudo cp /usr/local/bin/$2 ~/MagnetedCodePacker/$2
     ;;
     
     
