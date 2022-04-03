@@ -9,7 +9,7 @@ update)
     sudo mkdir /home/packerupdatecache 
     sudo wget https://github.com/packageash/packer-app-sudo/releases/download/$2/packer
     sudo mv packer /home/packerupdatecache
-    sudo cd /home/packerupdatecache
+    cd /home/packerupdatecache
     sudo mv packer /usr/local/bin
     cd
     sudo rm -r /home/packerupdatecache
