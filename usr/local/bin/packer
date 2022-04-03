@@ -1,11 +1,21 @@
 #!/bin/sh
 
-clear
+version=1.7
 
+newversion=$(( $version +0.1 ))
+
+function validate_url(){
+  if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]; then echo "New Packer Update use packer update $newversion"; fi
+}
+
+updateurl=https://github.com/packageash/packer-app-sudo/releases/download/$newversion/packer
+
+clear
 
 case $1 in
 
   install)
+    if `validate_url $updateurl >/dev/null`; then dosomething; else echo "No New Packer Updates Installing $2"; fi
     sudo mkdir /home/packercache
     sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/$2
     sudo mv $2 /home/packercache
@@ -20,13 +30,30 @@ case $1 in
     ;;
 
   uninstall)
+    if `validate_url $updateurl >/dev/null`; then dosomething; else echo "No New Packer Updates UnInstalling $2"; fi
     sudo rm /usr/local/bin/$2
     sudo clear
     sudo echo Uninstalled $2
     ;;
+
+update)
+    sudo echo Updateing To Packer $2
+    if `validate_url https://github.com/packageash/packer-app-sudo/releases/download/$2/packer >/dev/null`; then dosomething; else echo "Not An Update Yet Or Typed Wrong && exit"; fi
+    sudo rm /usr/local/bin/packer
+    sudo mkdir /home/packerupdatecache 
+    sudo wget https://github.com/packageash/packer-app-sudo/releases/download/$2/packer
+    sudo mv packer /home/packerupdatecache
+    sudo cd /home/packerupdatecache
+    sudo mv packer /usr/local/bin
+    sudo cd
+    sudo rm /home/packerupdatecache
+    sudo clear
+    sudo echo Upgraded To Packer Version $2
+    exit
+    ;;
     
   --version)
-  echo Packer Version 1.6 New Install Way Runtime Update Release
+  echo Packer Version $version
     ;;
     
     packages)
