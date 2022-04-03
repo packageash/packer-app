@@ -1,13 +1,28 @@
-#!/bin/sh
+#!/bin/bash
 
-a=1.7
+version=1.7
+versionformated=7
 
-b=0.1
+plus=1
 
-newversion=$(( $a + $b ))
+newversion=$(( $versionformated + $plus ))
 
 function validate_url(){
   if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]; then echo "New Packer Update use packer update $newversion"; fi
+}
+
+function dosomething(){
+   sudo rm /usr/local/bin/packer
+    sudo mkdir /home/packerupdatecache 
+    sudo wget https://github.com/packageash/packer-app-sudo/releases/download/$2/packer
+    sudo mv packer /home/packerupdatecache
+    sudo cd /home/packerupdatecache
+    sudo mv packer /usr/local/bin
+    sudo cd
+    sudo rm /home/packerupdatecache
+    sudo clear
+    sudo echo Upgraded To Packer Version $2
+    exit
 }
 
 updateurl=https://github.com/packageash/packer-app-sudo/releases/download/$newversion/packer
@@ -41,17 +56,6 @@ case $1 in
 update)
     sudo echo Updateing To Packer $2
     if `validate_url https://github.com/packageash/packer-app-sudo/releases/download/$2/packer >/dev/null`; then dosomething; else echo "Not An Update Yet Or Typed Wrong && exit"; fi
-    sudo rm /usr/local/bin/packer
-    sudo mkdir /home/packerupdatecache 
-    sudo wget https://github.com/packageash/packer-app-sudo/releases/download/$2/packer
-    sudo mv packer /home/packerupdatecache
-    sudo cd /home/packerupdatecache
-    sudo mv packer /usr/local/bin
-    sudo cd
-    sudo rm /home/packerupdatecache
-    sudo clear
-    sudo echo Upgraded To Packer Version $2
-    exit
     ;;
     
   --version)
