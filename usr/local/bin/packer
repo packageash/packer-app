@@ -11,7 +11,7 @@ update)
     sudo mv packer /home/packerupdatecache
     sudo cd /home/packerupdatecache
     sudo mv packer /usr/local/bin
-    sudo cd
+    cd
     sudo rm -r /home/packerupdatecache
     sudo clear
     sudo echo Upgraded To Packer Version $2
