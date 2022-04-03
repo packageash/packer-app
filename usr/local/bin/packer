@@ -16,7 +16,7 @@ update)
     exit
     ;;
 
-updateurl=https://github.com/packageash/packer-app-sudo/releases/download/$newversion/packer
+
 
 clear
 
