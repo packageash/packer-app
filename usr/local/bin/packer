@@ -1,10 +1,10 @@
 #!/bin/sh
 
-version=1.7
+a=1.7
 
-plus=0.1
+b=0.1
 
-newversion=$(( $version + $plus ))
+newversion=$(( $a + $b ))
 
 function validate_url(){
   if [[ `wget -S --spider $1  2>&1 | grep 'HTTP/1.1 200 OK'` ]]; then echo "New Packer Update use packer update $newversion"; fi
