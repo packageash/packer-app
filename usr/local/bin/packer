@@ -1,9 +1,9 @@
 #!/bin/bash
 
 version=1.7
-versionformated=7
+versionformated=1.7
 
-plus=1
+plus=0.1
 
 newversion=$(( $versionformated + $plus ))
 
@@ -32,7 +32,6 @@ clear
 case $1 in
 
   install)
-    if `validate_url $updateurl >/dev/null`; then dosomething; else echo "No New Packer Updates Installing $2"; fi
     sudo mkdir /home/packercache
     sudo wget https://github.com/packageash/repo/releases/download/1.0-repo-for-1.5-repo-update/$2
     sudo mv $2 /home/packercache
@@ -47,7 +46,6 @@ case $1 in
     ;;
 
   uninstall)
-    if `validate_url $updateurl >/dev/null`; then dosomething; else echo "No New Packer Updates UnInstalling $2"; fi
     sudo rm /usr/local/bin/$2
     sudo clear
     sudo echo Uninstalled $2
