@@ -1,5 +1,7 @@
 #/bin/bash
 
+clear
+
 case $1 in
 
 update)
@@ -15,12 +17,6 @@ update)
     sudo echo Upgraded To Packer Version $2
     exit
     ;;
-
-
-
-clear
-
-
 
   install)
     sudo mkdir /home/packercache
@@ -41,13 +37,8 @@ clear
     sudo clear
     sudo echo Uninstalled $2
     ;;
-
-update)
-    sudo echo Updateing To Packer $2
-    if `validate_url https://github.com/packageash/packer-app-sudo/releases/download/$2/packer >/dev/null`; then dosomething; else echo "Not An Update Yet Or Typed Wrong && exit"; fi
-    ;;
     
-  --version)
+  version)
   echo Packer Version $version
     ;;
     
